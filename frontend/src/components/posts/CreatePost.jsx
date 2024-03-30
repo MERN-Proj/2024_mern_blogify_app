@@ -1,8 +1,9 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@tanstack/react-query";
-import { createPostAPI } from "../../APIServices/posts/postsAPI.js";
-import { PostConst } from "../../utils/reactQueryKeys.js";
+
+import { createPostAPI } from "@/APIServices/posts/postsAPI.js";
+import { PostConst } from "@/utils/reactQueryKeys.js";
 
 const CreatePost = (props) => {
   // post mutation
