@@ -11,7 +11,8 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.2.4"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
