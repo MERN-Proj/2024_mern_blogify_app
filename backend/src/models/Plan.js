@@ -1,0 +1,24 @@
+import mongoose from 'mongoose';
+
+//schema
+const planSchema = new mongoose.Schema(
+  {
+    planName: {
+      type: String,
+      required: true,
+    },
+    features: [String],
+    limitations: [String],
+    price: {
+      type: Number,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  },
+);
+
+//model
+const Plan = mongoose.model('Plan', planSchema);
+export default Plan;
