@@ -8,6 +8,8 @@
 
 #jetbrains
 .idea/*
+backend/.idea/*
+frontend/.idea/*
 
 # Local History for Visual Studio Code
 .history/

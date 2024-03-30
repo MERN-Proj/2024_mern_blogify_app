@@ -1,0 +1,25 @@
+{
+  "name": "full-stack-blog-backend",
+  "version": "1.0.0",
+  "description": "API for a full stack blog application",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "keywords": ["api", "blog", "full stack", "backend", "express", "node", "mongodb"],
+  "author": "Mehedi Hasan",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "nodemon":" ^3.1.0"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
+}
