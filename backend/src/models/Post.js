@@ -3,6 +3,12 @@ import mongoose from 'mongoose';
 //schema
 const postSchema = new mongoose.Schema(
   {
+    // Post content
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     description: {
       type: String,
       required: true,
@@ -14,7 +20,7 @@ const postSchema = new mongoose.Schema(
     author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true,
+      // required: true,
     },
     nextEarningDate: {
       type: Date,
@@ -63,6 +69,7 @@ const postSchema = new mongoose.Schema(
         ref: 'Comment',
       },
     ],
+
     // Flag for moderation
     isBlocked: {
       type: Boolean,
