@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+
 import connectDB from './utils/connectDB.js';
 import postRouter from './router/postsRouter.js';
 
