@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchPost } from "@/APIServices/posts/postsAPI.js";
@@ -8,20 +8,18 @@ const PostDetails = (props) => {
   // !Get the post id
   const { postId } = useParams();
   // ! use query
-  const {
-    data: { postFound },
-    error,
-    isError,
-    isLoading,
-  } = useQuery({
+  const { data, error, isError, isLoading } = useQuery({
     queryKey: [QueryKey.posts.fetchById, postId],
     queryFn: () => fetchPost(postId),
   });
 
   return (
     <div>
-      <h1>{postFound.title}</h1>
-      <p>{postFound.description}</p>
+      <h1>{data?.postFound.title}</h1>
+      <p>{data?.postFound.description}</p>
+      <Link to={`/posts/${postId}/edit`}>
+        <button>Edit</button>
+      </Link>
     </div>
   );
 };

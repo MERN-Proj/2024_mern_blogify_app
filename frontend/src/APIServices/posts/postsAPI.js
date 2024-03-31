@@ -26,10 +26,15 @@ export const fetchPost = async (postId) => {
 
 //! update post
 export const updatePost = async (postData) => {
-  console.log(postData);
   const response = await axios.put(`${POSTS_API_URL}/${postData?.postId}`, {
     title: postData.title,
     description: postData.description,
   });
   return response.data;
+};
+
+//! delete  post
+export const deletePost = async (postId) => {
+  const posts = await axios.delete(`${POSTS_API_URL}/${postId}`);
+  return posts.data;
 };
