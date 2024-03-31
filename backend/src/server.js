@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 
 import connectDB from './utils/connectDB.js';
 import postRouter from './router/postsRouter.js';
@@ -13,6 +14,11 @@ const PORT = process.env.PORT || 9000;
 
 // Middlewares
 app.use(express.json()); //Parse json data
+const corsOptions = {
+  origin: [process.env.FRONTEND_BASE_URL],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 //!-- Route handlers
 app.use('/api/v1', postRouter);
