@@ -2,14 +2,14 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@tanstack/react-query";
 
-import { createPostAPI } from "@/APIServices/posts/postsAPI.js";
-import { PostConst } from "@/utils/reactQueryKeys.js";
+import { createPost } from "@/APIServices/posts/postsAPI.js";
+import QueryKey from "@/utils/reactQueryKeys.js";
 
 const CreatePost = (props) => {
   // post mutation
   const mutation = useMutation({
-    mutationKey: [PostConst.create],
-    mutationFn: createPostAPI,
+    mutationKey: [QueryKey.posts.create],
+    mutationFn: createPost,
   });
 
   const formik = useFormik({
@@ -32,6 +32,8 @@ const CreatePost = (props) => {
       mutation.mutate(postData);
     },
   });
+
+  const { isPending, isError, isSuccess } = mutation;
 
   return (
     <div>
