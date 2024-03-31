@@ -18,6 +18,12 @@ export const fetchAllPosts = async () => {
   return response.data;
 };
 
+//! Fetch  post by id
+export const fetchPost = async (postId) => {
+  const response = await axios.get(`${POSTS_API_URL}/${postId}`);
+  return response.data;
+};
+
 //! update post
 export const updatePost = async (postData) => {
   console.log(postData);
